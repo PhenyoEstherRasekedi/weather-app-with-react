@@ -30,9 +30,24 @@
   list-style: none;
 }
 
+.weather img {
+  height: 74px;
+  width: 74px;
+}
+
 .weather .temperature {
   font-weight: 400;
   font-size: 64px;
   color: black;
   line-height: 64px;
+}
+
+.weather .unit {
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  top: -34px;
+  margin-left: 5px;
+  line-height: 1;
 }

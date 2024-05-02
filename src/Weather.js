@@ -1,5 +1,6 @@
 import React from "react";
 import "./Weather.css";
+import axios from "axios";
 
 export default function Weather() {
   return (
@@ -35,7 +36,7 @@ export default function Weather() {
           <img
             src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
             alt="Clear with periodic clouds"
-            className="float- mb-4"
+            className="mb-4"
           />
 
           <span className="temperature">18</span>
