@@ -1,16 +1,17 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import "./Weather.css";
+
 import axios from "axios";
 
 export default function Weather(props) {
   const [weatherData, setweatherData] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data);
     setweatherData({
       ready: true,
       temperature: response.data.temperature.current,
-      date: "Wednesday 07:00",
+      date: new Date(response.data.time * 1000),
       description: response.data.condition.description,
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png",
       humidity: response.data.temperature.humidity,
@@ -45,7 +46,9 @@ export default function Weather(props) {
 
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>{weatherData.date}</li>
+          <li>
+            <FormattedDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-3">
@@ -73,7 +76,6 @@ export default function Weather(props) {
   } else {
     const apiKey = "4c7eaad934t1f8e85od2b40278d7eab7";
     let units = "metric";
-    let city = "Gaborone";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
 
