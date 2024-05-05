@@ -30,9 +30,13 @@
   list-style: none;
 }
 
-.weather img {
-  height: 74px;
-  width: 74px;
+.weather canvas {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.weather .clearfix {
+  display: inline-block;
 }
 
 .weather .temperature {
