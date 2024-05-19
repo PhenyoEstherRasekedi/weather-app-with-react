@@ -10,7 +10,9 @@ export default function App() {
         <footer>
           {" "}
           This project was coded by{" "}
-          <a href="https://phenyorasekedi.netlify.app/">Phenyo Rasekedi </a>
+          <a href="https://phenyorasekedi.netlify.app/">
+            Phenyo Esther Rasekedi{" "}
+          </a>
           and is{" "}
           <a
             href="https://github.com/PhenyoEstherRasekedi/weather-app-with-react"
